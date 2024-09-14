@@ -1,27 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/*basic h1 tag in react
-const heading=React.createElement("h1",{id:"heading"},"Hello world from react");   //create h1 tag, object and what text in heading // create element is important function in React
-const root=ReactDOM.createRoot(document.getElementById("root"));       // now to add text in div root , we need to create a root where all the code is excetued and is present in ReactDOM link
-root.render(heading);   //after i create a root , i need to render heading in the root */
+//JSX(transpiled before it reaches to JSX) =>Parcel-Babel
+//JSX => babel transpiles it to ReactElement => JS Object => HTML element (render)
 
-//netsed tag in react
-/*
-<div id="parent">
-  <div id="child">
-    <h1>hey hello</h1>
-  </div>
-</div> 
-ReactElement is an object => HTML(browser understands*/
-
-const parent=React.createElement("div",{id:"parent"},
-  React.createElement("div",{id:"child"}, 
-    [React.createElement("h1",{}, "Janhavi Parihar ty it" ),
-     React.createElement("h2",{}, "I am learning react" )]  //create an array for siblings  
-    )
+//create React componenets
+const title = (
+  <h1 className="head" tabIndex="5">
+    Namaste react!!!
+  </h1>
 );
 
-const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
-console.log(parent);
+const number = 1000;
+//any piece of js runs in this {} braces
+
+const Para = () => (
+  <div id="cointainer">
+    {title}
+    <h3>{number}</h3>  
+    <h3 className="paragraph">
+      I am learning react from namaste react
+    </h3>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Para />);
